@@ -1,0 +1,83 @@
+{
+  "name": "@ouicu/mcp",
+  "version": "0.1.2",
+  "mcpName": "com.ouicu/mcp",
+  "description": "An MCP server for ouicu: coding agents share a dev server or put a built site up and hand back the link.",
+  "keywords": [
+    "ouicu",
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "claude-code",
+    "cursor",
+    "localhost",
+    "tunnel",
+    "share-localhost",
+    "ngrok-alternative",
+    "preview",
+    "deploy"
+  ],
+  "homepage": "https://ouicu.com/docs/mcp",
+  "bugs": {
+    "email": "hello@ouicu.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kroqdotdev/ouicu-js.git",
+    "directory": "packages/mcp"
+  },
+  "author": {
+    "name": "Mads Sauer",
+    "url": "https://ouicu.com/about"
+  },
+  "engines": {
+    "node": ">=20.3"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "ouicu-mcp": "dist/bin/mcp.js"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && tsup",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint",
+    "test": "vitest run",
+    "prepublishOnly": "pnpm build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "@ouicu/sdk": "workspace:^",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "@types/node": "^26.6.3",
+    "eslint": "^9.39.5",
+    "globals": "^16.4.0",
+    "tsup": "^8.5.1",
+    "tsx": "^4.23.15",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.71.0",
+    "vitest": "^5.0.3"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.ouicu/mcp",
+  "title": "ouicu",
+  "description": "Share a dev server or upload a built site at a public https link, and hand the link back.",
+  "websiteUrl": "https://ouicu.com/docs/mcp",
+  "repository": {
+    "url": "https://github.com/kroqdotdev/ouicu-js",
+    "source": "github",
+    "subfolder": "packages/mcp"
+  },
+  "icons": [
+    {
+      "src": "https://ouicu.com/brand/ouicu-icon-192.png",
+      "mimeType": "image/png",
+      "sizes": ["192x192"]
+    },
+    {
+      "src": "https://ouicu.com/brand/ouicu-logo.svg",
+      "mimeType": "image/svg+xml",
+      "sizes": ["any"]
+    }
+  ],
+  "version": "0.1.2",
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "@ouicu/mcp",
+      "version": "0.1.2",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "OUICU_API_KEY",
+          "description": "A ouicu API key. Optional: without one the server uses the login `ouicu login` saved, or offers to log in.",
+          "isRequired": false,
+          "isSecret": true,
+          "format": "string"
+        }
+      ]
+    }
+  ]
+}
